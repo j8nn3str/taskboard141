@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-dark">
   <a class="navbar-brand">
-    <img src="https://via.placeholder.com/50 "  class="rounded-circle d-inline-block align-top" alt="">
+    <img src="https://via.placeholder.com/50 " class="rounded-circle d-inline-block align-top" alt="">
     Task Board 141
   </a>
 </nav>
@@ -8,101 +8,38 @@
 <div class="container-fluid pt-3">
   <div>
     <div class="row flex-row flex-sm-nowrap py-5">
-      <!-- Task Group -->
-      <div class="col-sm-4 col-md-3">
-        <div class="task-group card">
-          <div class="card-block">
-            <h4 class="card-title text-truncate py-2">
-              Task Group Name 1
-            </h4>
-            <!-- Task -->
-            <div class="card p-2 bg-faded sticky_red">
-              <h5 class="card-title">Card Title</h5>
-              <p>Task Name 1-1</p>
-            </div>
-            <br>
-            <!-- /Task -->
+      <ng-container *ngFor="let group of results">
+        <ng-container *ngIf="group.resource_subtype === 'section'">
+          <div class="col-sm-4 col-md-3">
+            <div class="task-group card">
+              <div class="card-block">
+                <h4 class="card-title text-truncate py-2">
+                  {{ group.name}}
+                </h4>
+                <!-- Task -->
+                <div class="card p-2 bg-faded sticky_red">
+                  <h5 class="card-title">Card Title</h5>
+                  <p>Task Name 1-1</p>
+                </div>
+                <br>
+                <!-- /Task -->
 
-            <!-- Task -->
-            <div class="card p-2 bg-faded sticky_red">
-              <h5 class="card-title">Card Title</h5>
-              <p>Task Name 1-1</p>
-            </div>
-            <br>
-            <!-- /Task -->
+                <!-- Task -->
+                <div class="card p-2 bg-faded sticky_red">
+                  <h5 class="card-title">Card Title</h5>
+                  <p>Task Name 1-1</p>
+                </div>
+                <br>
+                <!-- /Task -->
 
+              </div>
+            </div>
           </div>
-        </div>
+        </ng-container>
 
-      </div>
-      <!-- /Task Group -->
-
+      </ng-container>
       <!-- Task Group -->
-      <div class="col-sm-4 col-md-3">
-        <div class="task-group card">
-          <div class="card-block">
-            <h4 class="card-title text-truncate py-2">
-              Task Group Name 2
-            </h4>
-            <!-- Task -->
-            <div class="card p-2 bg-faded sticky_red">
-              <h5 class="card-title">Card Title</h5>
-              <p>Task Name 2-1</p>
-            </div>
-            <br>
-            <!-- /Task -->
 
-            <!-- Task -->
-            <div class="card p-2 bg-faded sticky_red">
-              <h5 class="card-title">Card Title</h5>
-              <p>Task Name 2-1</p>
-            </div>
-            <br>
-            <!-- /Task -->
-
-            <!-- Task -->
-            <div class="card p-2 bg-faded sticky_red">
-              <h5 class="card-title">Card Title</h5>
-              <p>Task Name 2-1</p>
-            </div>
-            <br>
-            <!-- /Task -->
-            <!-- Task -->
-            <div class="card p-2 bg-faded sticky_red">
-              <h5 class="card-title">Card Title</h5>
-              <p>Task Name 3-1</p>
-            </div>
-            <br>
-            <!-- /Task -->
-
-          </div>
-        </div>
-
-      </div>
-      <!-- /Task Group -->
-
-      <!-- Task Group -->
-      <div class="col-sm-4 col-md-3">
-        <div class="task-group card">
-          <div class="card-block">
-            <h4 class="card-title text-truncate py-2">
-              Task Group Name 3
-            </h4>
-            <!-- Task -->
-            <div class="card p-2 bg-faded sticky_red">
-              <h5 class="card-title">Card Title</h5>
-              <p>Task Name 3-1</p>
-            </div>
-            <br>
-            <!-- /Task -->
-
-            <!-- Task -->
-            <div class="card p-2 bg-faded sticky_red">
-              <h5 class="card-title">Card Title</h5>
-              <p>Task Name 3-1</p>
-            </div>
-            <br>
-            <!-- /Task -->
-
-          </div>
-        </div>
+    </div>
+  </div>
+</div>
