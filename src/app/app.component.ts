@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import * as asanaSecrets from '../configurations/asana/private/auth'
 
+declare var require: any; // not having this will result in an error
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
