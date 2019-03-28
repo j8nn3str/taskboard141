@@ -20,7 +20,7 @@ export class AppComponent {
     const asana = require('node_modules/asana/dist/asana-min.js')
     const client = asana.Client.create().useAccessToken(asanaSecrets.my_access_token);
 
-    client.tasks.findByProject(asanaSecrets.projectID, 'opt_fields=resource_subtype,memberships.(section).name&opt_pretty').then(collection => {
+    client.tasks.findByProject(asanaSecrets.projectID, 'opt_fields=name,custom_fields,resource_subtype,memberships.(section).name&opt_pretty').then(collection => {
       collection.fetch(200).then((tasks: any) => {
         this.results = tasks;
         console.log(this.results)
