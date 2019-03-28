@@ -3,9 +3,31 @@
 @import '~bootstrap/scss/bootstrap-grid';
 @import "~bootstrap/scss/bootstrap.scss";
 
-$body-bg:    $gray-900;
+$body-bg: $gray-900;
 
 body {
-    background-color:  $body-bg;
-    color:              $white;
+    background-color: $body-bg;
+    color: $white;
+}
+
+/** General styling for the taskboard **/
+
+div.task-group {
+    div.task {
+        /* Sticky Note Colors */
+        $sticky-colors-list: red yellow-orange orange yellow green aqua yellow-green blue indigo purple magenta hot-pink pink cool-gray;
+        $sticky-colors-value-list: #dc3545 #fd7e14 rgb(255, 72, 0) #ffc107 #28a745 #17adb8 yellowgreen #007bff #6610f2 #6f42c1 magenta hotpink #e83e8c gray;
+
+        @each $bg-color in $sticky-colors-list {
+            $i: index($sticky-colors-list, $bg-color);
+
+            &.#{$bg-color} {
+                background-color: mix(white, nth($sticky-colors-value-list, $i), 35%);
+            }
+        }
+
+        .task-body {
+            background: transparentize($color: white, $amount: .80)
+        }
+    }
 }
