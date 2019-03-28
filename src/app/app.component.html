@@ -19,11 +19,18 @@
                 <ng-container *ngFor="let task of results">
                   <ng-container *ngIf="task.resource_subtype === 'default_task'">
                     <ng-container *ngIf="task.memberships[0].section.gid === group.gid">
-                        <div class="card p-2 bg-faded sticky_red">
-                            <h5 class="card-title">Card Title</h5>
-                            <p>{{ task.name }}</p>
-                          </div>
-                          <br>
+                      <div class="card p-2 bg-faded sticky_red">
+                        <h5 class="card-title">
+                          <ng-container *ngIf="task.custom_fields[1].enum_value; else noDepartment">
+                            {{task.custom_fields[1].enum_value.name}}
+                          </ng-container>
+                          <ng-template #noDepartment>
+                            No department specified
+                          </ng-template>
+                        </h5>
+                        <p>{{ task.name }}</p>
+                      </div>
+                      <br>
                     </ng-container>
                   </ng-container>
                 </ng-container>
