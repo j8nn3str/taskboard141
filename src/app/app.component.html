@@ -16,27 +16,21 @@
                 <h4 class="card-title text-truncate py-2">
                   {{ group.name}}
                 </h4>
-                <!-- Task -->
-                <div class="card p-2 bg-faded sticky_red">
-                  <h5 class="card-title">Card Title</h5>
-                  <p>Task Name 1-1</p>
-                </div>
-                <br>
-                <!-- /Task -->
-
-                <!-- Task -->
-                <div class="card p-2 bg-faded sticky_red">
-                  <h5 class="card-title">Card Title</h5>
-                  <p>Task Name 1-1</p>
-                </div>
-                <br>
-                <!-- /Task -->
-
+                <ng-container *ngFor="let task of results">
+                  <ng-container *ngIf="task.resource_subtype === 'default_task'">
+                    <ng-container *ngIf="task.memberships[0].section.gid === group.gid">
+                        <div class="card p-2 bg-faded sticky_red">
+                            <h5 class="card-title">Card Title</h5>
+                            <p>{{ task.name }}</p>
+                          </div>
+                          <br>
+                    </ng-container>
+                  </ng-container>
+                </ng-container>
               </div>
             </div>
           </div>
         </ng-container>
-
       </ng-container>
     </div>
   </div>
