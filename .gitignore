@@ -44,3 +44,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Private Conguration Files specific to this app
+src/configurations/asana/private/
