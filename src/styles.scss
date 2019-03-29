@@ -13,6 +13,7 @@ body {
 /** General styling for the taskboard **/
 
 div.task-group {
+    background: transparent;
     div.task {
         /* Sticky Note Colors */
         $sticky-colors-list: red yellow-orange orange yellow green aqua yellow-green blue indigo purple magenta hot-pink pink cool-gray none;
