@@ -13,7 +13,10 @@ export class AppComponent {
 
   results: Object;
   ngOnInit() {
-    this.getResults()
+    setInterval(() => {
+      this.getResults();
+    }, 3000)
+
   }
 
   getResults() {
