@@ -1,6 +1,6 @@
-<nav class="navbar navbar-light bg-dark">
+<nav class="navbar">
   <a class="navbar-brand">
-    <img src="https://via.placeholder.com/50 " class="rounded-circle d-inline-block align-top" alt="">
+    <img src="../assets/logo.png " height="45" width="45" class="rounded-circle d-inline-block align-top" alt="">
     Task Board 141
   </a>
 </nav>
@@ -20,8 +20,7 @@
                   <ng-container *ngIf="task.resource_subtype === 'default_task'">
                     <ng-container *ngIf="task.memberships[0].section.gid === group.gid">
                       <div class=" task card p-2 bg-faded" [ngClass] = "task.custom_fields[0].enum_value != null  ? task.custom_fields[0].enum_value.color : 'none'">
-                        <h5 class="card-title">
-        
+                        <h5 class="card-title">        
                           <ng-container *ngIf="task.custom_fields[1].enum_value; else noDepartment">
                             {{task.custom_fields[1].enum_value.name}}
                           </ng-container>
